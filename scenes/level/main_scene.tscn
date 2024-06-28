@@ -1,0 +1,37 @@
+[gd_scene load_steps=6 format=3 uid="uid://bsfkd5ih8ml01"]
+
+[ext_resource type="Script" path="res://scenes/entities/game_manager.gd" id="1_4eti3"]
+[ext_resource type="PackedScene" uid="uid://bhgn2gu324p7x" path="res://scenes/environment/scroll_bg.tscn" id="2_edb36"]
+[ext_resource type="PackedScene" uid="uid://bkoi0mjfh20md" path="res://scenes/gameplay/player.tscn" id="3_glsg1"]
+[ext_resource type="PackedScene" uid="uid://3pik1rvcmc24" path="res://scenes/gameplay/spawner.tscn" id="4_kqs4w"]
+[ext_resource type="PackedScene" uid="uid://dk0by50nxiafa" path="res://scenes/environment/ground.tscn" id="5_2blf6"]
+
+[node name="MainScene" type="Node2D"]
+script = ExtResource("1_4eti3")
+
+[node name="UI Element" type="Node" parent="."]
+
+[node name="ScrollBG" parent="UI Element" instance=ExtResource("2_edb36")]
+layer = -1
+
+[node name="Entities" type="Node" parent="."]
+
+[node name="Camera2D" type="Camera2D" parent="Entities"]
+
+[node name="GamePlay" type="Node" parent="."]
+
+[node name="Player" parent="GamePlay" instance=ExtResource("3_glsg1")]
+position = Vector2(0, 50)
+
+[node name="Spawner" parent="GamePlay" instance=ExtResource("4_kqs4w")]
+
+[node name="Environment" type="Node" parent="."]
+
+[node name="Ground" parent="Environment" instance=ExtResource("5_2blf6")]
+position = Vector2(0, 250)
+
+[node name="Ground2" parent="Environment" instance=ExtResource("5_2blf6")]
+position = Vector2(504, 250)
+
+[node name="Ground3" parent="Environment" instance=ExtResource("5_2blf6")]
+position = Vector2(-504, 250)

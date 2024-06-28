@@ -1,0 +1,17 @@
+[gd_scene load_steps=4 format=3 uid="uid://bsfkd5ih8ml01"]
+
+[ext_resource type="PackedScene" uid="uid://bkoi0mjfh20md" path="res://scenes/player.tscn" id="1_kcfm6"]
+[ext_resource type="PackedScene" uid="uid://bhgn2gu324p7x" path="res://scenes/scroll_bg.tscn" id="1_yih6e"]
+[ext_resource type="PackedScene" uid="uid://cbaupg8bty1v" path="res://scenes/pipe.tscn" id="3_keevl"]
+
+[node name="MainScene" type="Node2D"]
+
+[node name="ScrollBG" parent="." instance=ExtResource("1_yih6e")]
+layer = -1
+
+[node name="Camera2D" type="Camera2D" parent="."]
+
+[node name="Player" parent="." instance=ExtResource("1_kcfm6")]
+
+[node name="Pipe" parent="." instance=ExtResource("3_keevl")]
+position = Vector2(540, 0)
