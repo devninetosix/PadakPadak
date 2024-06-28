@@ -2,7 +2,7 @@ extends CanvasLayer
 
 @onready var rich_text_label: RichTextLabel = $RichTextLabel
 
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	if GameManager.get_game_state() == Enums.GAME_STATE.MENU:
 		rich_text_label.hide()
 	else:

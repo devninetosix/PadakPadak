@@ -1,9 +1,11 @@
-[gd_scene load_steps=7 format=3 uid="uid://bsfkd5ih8ml01"]
+[gd_scene load_steps=9 format=3 uid="uid://bsfkd5ih8ml01"]
 
 [ext_resource type="Script" path="res://nodes/entities/game_manager.gd" id="1_4eti3"]
 [ext_resource type="PackedScene" uid="uid://bhgn2gu324p7x" path="res://nodes/environment/scroll_bg.tscn" id="2_edb36"]
 [ext_resource type="PackedScene" uid="uid://bkoi0mjfh20md" path="res://nodes/gameplay/player.tscn" id="3_glsg1"]
 [ext_resource type="PackedScene" uid="uid://kib5db4pdvmb" path="res://nodes/entities/user_score.tscn" id="3_h0ls2"]
+[ext_resource type="PackedScene" uid="uid://hvha80eyi0il" path="res://nodes/entities/dead_screen.tscn" id="4_a8eid"]
+[ext_resource type="PackedScene" uid="uid://c41ypevg1seft" path="res://nodes/entities/main_screen.tscn" id="4_h2l0l"]
 [ext_resource type="PackedScene" uid="uid://3pik1rvcmc24" path="res://nodes/gameplay/spawner.tscn" id="4_kqs4w"]
 [ext_resource type="PackedScene" uid="uid://dk0by50nxiafa" path="res://nodes/environment/ground.tscn" id="5_2blf6"]
 
@@ -14,6 +16,10 @@ script = ExtResource("1_4eti3")
 
 [node name="ScrollBG" parent="UI Element" instance=ExtResource("2_edb36")]
 layer = -1
+
+[node name="MainScreen" parent="UI Element" instance=ExtResource("4_h2l0l")]
+
+[node name="DeadScreen" parent="UI Element" instance=ExtResource("4_a8eid")]
 
 [node name="UserScore" parent="UI Element" instance=ExtResource("3_h0ls2")]
 

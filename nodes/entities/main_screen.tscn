@@ -1,3 +1,45 @@
-[gd_scene format=3 uid="uid://c41ypevg1seft"]
+[gd_scene load_steps=5 format=3 uid="uid://c41ypevg1seft"]
+
+[ext_resource type="Texture2D" uid="uid://d2kst2r4y5xbq" path="res://assets/ui/PlayButton.png" id="1_ifwht"]
+[ext_resource type="Script" path="res://nodes/entities/main_screen.gd" id="1_ol5u7"]
+[ext_resource type="Texture2D" uid="uid://duifi2xacfkuu" path="res://assets/ui/PlayButton_pressed.png" id="2_4uqx1"]
+[ext_resource type="Theme" uid="uid://v5juidpslx2n" path="res://main_theme.tres" id="4_aeqjj"]
 
 [node name="MainScreen" type="CanvasLayer"]
+script = ExtResource("1_ol5u7")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.313726)
+
+[node name="TextureButton" type="TextureButton" parent="."]
+unique_name_in_owner = true
+anchors_preset = -1
+anchor_left = 0.4
+anchor_top = 0.7
+anchor_right = 0.6
+anchor_bottom = 0.85
+grow_horizontal = 2
+grow_vertical = 0
+texture_normal = ExtResource("1_ifwht")
+texture_pressed = ExtResource("2_4uqx1")
+texture_hover = ExtResource("1_ifwht")
+stretch_mode = 5
+
+[node name="RichTextLabel" type="RichTextLabel" parent="."]
+anchors_preset = -1
+anchor_top = 0.2
+anchor_right = 1.0
+anchor_bottom = 0.5
+grow_horizontal = 2
+theme = ExtResource("4_aeqjj")
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_x = 5
+theme_override_constants/shadow_offset_y = 5
+theme_override_font_sizes/normal_font_size = 60
+bbcode_enabled = true
+text = "[center]PADAK PADAK[/center]"
