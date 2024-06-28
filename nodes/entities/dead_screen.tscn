@@ -1,0 +1,3 @@
+[gd_scene format=3 uid="uid://hvha80eyi0il"]
+
+[node name="DeadScreen" type="CanvasLayer"]

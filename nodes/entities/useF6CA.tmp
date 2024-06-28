@@ -1,0 +1,21 @@
+[gd_scene load_steps=3 format=3 uid="uid://kib5db4pdvmb"]
+
+[ext_resource type="Theme" uid="uid://v5juidpslx2n" path="res://main_theme.tres" id="1_2v1nq"]
+[ext_resource type="Script" path="res://scenes/entities/user_score.gd" id="1_ckxjh"]
+
+[node name="UserScore" type="CanvasLayer"]
+script = ExtResource("1_ckxjh")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="."]
+unique_name_in_owner = true
+anchors_preset = -1
+anchor_left = 0.794
+anchor_top = 0.015
+anchor_right = 0.978
+anchor_bottom = 0.162
+offset_top = 0.28
+grow_vertical = 0
+theme = ExtResource("1_2v1nq")
+bbcode_enabled = true
+text = "[right]000[/right]"
+fit_content = true

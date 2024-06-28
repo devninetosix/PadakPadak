@@ -11,12 +11,14 @@ config_version=5
 [application]
 
 config/name="PadakPadak"
+run/main_scene="res://nodes/level/main_scene.tscn"
 config/features=PackedStringArray("4.2", "GL Compatibility")
 config/icon="res://icon.svg"
 
 [autoload]
 
-GameManager="*res://scenes/entities/game_manager.gd"
+GameManager="*res://nodes/entities/game_manager.gd"
+Enums="*res://nodes/entities/enums.gd"
 
 [input]
 

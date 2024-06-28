@@ -1,0 +1,64 @@
+[gd_scene load_steps=5 format=3 uid="uid://cbaupg8bty1v"]
+
+[ext_resource type="Script" path="res://nodes/gameplay/pipe.gd" id="1_ohcl1"]
+[ext_resource type="Texture2D" uid="uid://ne73r2miivqq" path="res://assets/environment/Pipe.png" id="2_i46ei"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_36fi3"]
+size = Vector2(45, 150)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_2hlgb"]
+size = Vector2(50, 287)
+
+[node name="Pipe" type="Node2D"]
+script = ExtResource("1_ohcl1")
+
+[node name="ScoreArea2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ScoreArea2D"]
+shape = SubResource("RectangleShape2D_36fi3")
+
+[node name="UpPipe" type="Area2D" parent="."]
+unique_name_in_owner = true
+position = Vector2(0, -180)
+disable_mode = 1
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="UpPipe"]
+z_index = 1
+position = Vector2(0, -1.5)
+shape = SubResource("RectangleShape2D_2hlgb")
+
+[node name="Sprite2D" type="Sprite2D" parent="UpPipe"]
+texture_filter = 1
+rotation = 3.14159
+scale = Vector2(2, 2)
+texture = ExtResource("2_i46ei")
+
+[node name="Sprite2D2" type="Sprite2D" parent="UpPipe"]
+z_index = -1
+texture_filter = 1
+position = Vector2(0, -320)
+rotation = 3.14159
+scale = Vector2(2, 2)
+texture = ExtResource("2_i46ei")
+flip_v = true
+
+[node name="DownPipe" type="Area2D" parent="."]
+unique_name_in_owner = true
+position = Vector2(0, 180)
+disable_mode = 1
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="DownPipe"]
+z_index = 1
+shape = SubResource("RectangleShape2D_2hlgb")
+
+[node name="Sprite2D" type="Sprite2D" parent="DownPipe"]
+texture_filter = 1
+scale = Vector2(2, 2)
+texture = ExtResource("2_i46ei")
+
+[node name="Sprite2D2" type="Sprite2D" parent="DownPipe"]
+texture_filter = 1
+position = Vector2(0, 320)
+scale = Vector2(2, 2)
+texture = ExtResource("2_i46ei")
+flip_v = true
