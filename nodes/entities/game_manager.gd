@@ -1,18 +1,24 @@
 extends Node2D
 
+# game_manager.gd
+
 var curr_score := 0
 var game_state := Enums.GAME_STATE.MENU
 
+signal game_state_changed(state)
+
 func _ready() -> void:
 	set_game_state(Enums.GAME_STATE.MENU)
+	connect("game_state_changed", Callable(self, "_on_game_state_changed"))
 
 func get_game_state() -> Enums.GAME_STATE:
 	return game_state
 
-# 나머지는 private으로 가
 func set_game_state(state: Enums.GAME_STATE) -> void:
 	game_state = state
-	
+	emit_signal("game_state_changed", state)
+
+func _on_game_state_changed(state: Enums.GAME_STATE) -> void:
 	match state:
 		Enums.GAME_STATE.MENU:
 			# 게임 점수 초기화
@@ -21,6 +27,7 @@ func set_game_state(state: Enums.GAME_STATE) -> void:
 			print("MENU")
 		Enums.GAME_STATE.ON_PLAY:
 			# 게임 플레이 할 수 있게끔
+			curr_score = 0
 			print("PLAY")
 		Enums.GAME_STATE.ON_DEAD:
 			# 전부 멈추기
