@@ -23,12 +23,10 @@ func _on_game_state_changed(state: Enums.GAME_STATE) -> void:
 		Enums.GAME_STATE.MENU:
 			curr_score = 0
 			emit_signal("reset_game")
-			print("MENU")
 		Enums.GAME_STATE.ON_PLAY:
 			curr_score = 0
-			print("PLAY")
 		Enums.GAME_STATE.ON_DEAD:
-			print("DEAD")
+			pass
 
 func add_score() -> void:
 	curr_score += 1

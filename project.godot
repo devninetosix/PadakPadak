@@ -20,6 +20,15 @@ config/icon="res://icon.svg"
 GameManager="*res://nodes/entities/game_manager.gd"
 Enums="*res://nodes/entities/enums.gd"
 
+[display]
+
+window/size/viewport_width=540
+window/size/viewport_height=960
+
+[editor_plugins]
+
+enabled=PackedStringArray()
+
 [input]
 
 InputEnter={
@@ -33,3 +42,4 @@ InputEnter={
 
 renderer/rendering_method="gl_compatibility"
 renderer/rendering_method.mobile="gl_compatibility"
+textures/vram_compression/import_etc2_astc=true
